@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Yönetici Giriş Paneli</title>
+</head>
+
+<body style="background-color: #343a40;">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <h2 style="text-align: left; margin-top: 220px; margin-left: 220px; color: white; font-family: 'Times New Roman', Times, serif;">YAZILIM LABORATUVARI I</h2> <br>
+    <h3 style="text-align: left; margin-left: 220px; color: white; font-family: 'Times New Roman', Times, serif;">PROJE III</h3>
+    <div class="container" style="padding: 50px;">
+        <div class="card card-login mx-auto text-center bg-dark" style="position: absolute; top: 100px; right: 200px; padding: 50px;">
+            <h3 style="color: white;">Yönetici Giriş Paneli</h3>
+            <div class="card-header mx-auto bg-dark">
+                <span> <img src="../kocaeli_universitesi_logo.png" class="w-75" alt="Logo"> </span><br />
+
+            </div>
+            <div class="card-body">
+                <form action="admingiris" method="post">
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-angle-right"></i></span>
+                        </div>
+                        <input type="text" name="kullanici" id="kullanici" class="form-control" placeholder="Yönetici Adı:">
+                    </div>
+
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-angle-right"></i></span>
+                        </div>
+                        <input type="password" name="sifre" id="sifre" class="form-control" placeholder="Yönetici Şifresi:">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" name="btn" value="Giriş"
+                            class="btn btn-outline-success center login_btn" style="background-color: ghostwhite;">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yönetici Paneli</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"/>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+<body style="background-color:#343a40;">
+    <div class="container">
+        <p class="h2 text-center">Yönetici Paneli</p>
+        <form action="/adminicerisi" method="post">
+            <div class="preview text-center">
+            
+                <span class="Error"></span>
+            </div>
+            <div class="form-group">
+                <label style="color: white; width: 30ch; position: absolute; margin-top: 10px;">Yeni bir kullanıcı eklemek için kullanıcı adı ve şifre giriniz.</label>
+                <input style="width: 30ch; position: absolute; margin-top: 63px;" class="form-control" type="text" name="addkullanc" required placeholder="Kullanıcı adı"/>
+                <input style="width: 30ch; position: absolute; margin-top: 100px;" class="form-control" type="text" name="addsifre" required placeholder="Şifre"/>
+                <span class="Error"></span>
+            </div>
+            <div class="form-group">
+                <input class="btn btn-outline-success float-left login_btn" style="width: 30ch; background-color:black;  position: absolute; margin-top: 145px;" type="submit" value="Kaydet"/>
+            </div>
+        </form>    
+        <form action="/adminicerisi" method="post">
+            <div class="form-group">
+                <label style="color: white; position: absolute; margin-left: 450px; margin-top: 10px;">Kullanıcı güncellemek için mevcut kullanıcı adınızı,<br> yeni kullanıcı adını ve şifresini giriniz.</label>
+                <input style="position: absolute; width: 30ch; margin-left: 450px; margin-top: 63px;" class="form-control" type="text" name="guncadi1" required placeholder="Mevcut Kullanıcı Adı"/>
+                <input style="position: absolute; width: 30ch; margin-left: 450px; margin-top: 100px;"class="form-control" type="text" name="guncadi2" required placeholder="Yeni Kullanıcı Adı"/>
+                <input style="position: absolute; width: 30ch; margin-left: 450px; margin-top: 135px;" class="form-control" type="text" name="guncsifre" required placeholder="Yeni Şifre"/>
+                <span class="Error"></span>
+            </div>
+            <div class="form-group">
+                <input style="background-color:black; position: absolute; width: 30ch; margin-left: 450px; margin-top: 180px;" class="btn btn-outline-success btn-block" type="submit" value="Güncelle"/>
+            </div>
+        </form>  
+        <form action="/adminicerisi" method="post">  
+            <div class="form-group">
+                <label style="color: white; position: absolute; width: 30ch; margin-left: 950px; margin-top: 10px;">Silmek istediğiniz kullanıcının adını giriniz.</label>
+                <input style="position: absolute; width: 30ch; margin-left: 950px; margin-top: 63px;" class="form-control" type="text" name="kullanicisil" required placeholder="Kullanici adı"/>
+                <span class="Error"></span>
+            </div>
+            <div class="form-group">
+                <input style="background-color:black; position: absolute; width: 30ch; margin-left: 950px; margin-top: 105px;" class="btn btn-outline-success btn-block" type="submit" value="Sil"/>
+            </div>
+            <div class="form-group">
+                <a style="background-color:black; padding: 20px; position: absolute; width: 30ch; margin-left: 450px; margin-top: 300px;" class="btn btn-outline-success btn-block" href="/adminsorgular">Sorgu</a>
+            </div>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Yönetici Sorgu Paneli</title>
+</head>
+
+<body style="background-color:#343a40;">
+    <H1 style="font-family: 'Times New Roman', Times, serif; color: #fff; text-align: center;">YÖNETİCİ SORGU PANELİ</H1>
+    <form action="/adminsorgular" method="post">
+        <div class="container" style="position: relative; top: 100px; right: 200px; padding: 50px;">
+            <div class="main">
+                <div class="main-center">
+                    
+                    <form class="" method="post" action="#">
+
+                        <div class="form-group">
+                            <label for="name" style="color: white;">YÜKLEYEN</label>
+                            <div class="input-group">
+                                
+                                <input type="text" class="form-control" name="Yukleyen" id="Yukleyen" style="margin-right: 850px
+                                ;"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name" style="color: white;">YAZAR</label>
+                            <div class="input-group">
+                                
+                                <input type="text" class="form-control" name="Tez_Sahibi" id="Tez_Sahibi" style="margin-right: 850px
+                                ;"
+                                     />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" style="color: white;">TÜR</label>
+                            <div class="input-group">
+                                
+                                <input type="text" class="form-control" name="Ders_adi" style="margin-right: 850px
+                                ;"  />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="username" style="color: white;">ÖZET</label>
+                            <div class="input-group">
+                                
+                                <input type="text" class="form-control" name="Proje_ozeti" style="margin-right: 850px
+                                ;"
+                                    />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password" style="color: white;">DÖNEM</label>
+                            <div class="input-group">
+                                
+                                <input type="text" class="form-control" name="Proje_donemi" style="margin-right: 850px
+                                ;"
+                                     />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirm" style="color: white;">BAŞLIK</label>
+                            <div class="input-group">
+                                
+                                <input type="text" class="form-control" name="Proje_konusu" style="margin-right: 850px
+                                ;"
+                                     />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm" style="color: white;">ANAHTAR KELİMELER:</label>
+                            <div class="input-group">
+                                
+                                <input type="text" class="form-control" name="Proje_anahtar" style="margin-right: 850px
+                                ;"
+                                     />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm" style="color: white;">DANIŞMAN</label>
+                            <div class="input-group">
+                                
+                                <input type="text" class="form-control" name="Proje_danisman" style="margin-right: 850px
+                                ;"
+                                     />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm" style="color: white;">JÜRİ ÜYELERİ</label>
+                            <div class="input-group">
+                                
+                                <input type="text" class="form-control" name="Proje_juri" style="margin-right: 850px
+                                ;"
+                                     />
+                            </div>
+                        </div>
+
+                        <input type="submit" name="btn" value="Sorgular"
+                            class="btn btn-outline-success login_btn" style="background-color: black; margin-left: 60px; margin-top: 10px; padding: 10px;">
+
+                    </form>
+                </div>
+                <!--main-center"-->
+            </div>
+            <!--main-->
+        </div>
+        <!--container-->
+    </form>
+    <div class="container" style="position: absolute; top: 100px; left: 300px; padding: 50px;">
+        <table class="table table-hower" style="border: #fff; border-style: solid; border-collapse: separate;">
+            <thead>
+                <tr>
+                    <th style="color: white;">YÜKLEYEN</th>
+                    <th style="color: white;">PDF</th>
+                    <th style="color: white;">YAZAR</th>
+                    <th style="color: white;">KONU</th>
+                    <th style="color: white;">TÜR</th>
+                    <th style="color: white;">ÖZET</th>
+                    <th style="color: white;">DÖNEM</th>
+                    <th style="color: white;">ANAHTAR </th>
+                    <th style="color: white;">DANIŞMAN</th>
+                    <th style="color: white;">JÜRİLER</th>
+                </tr>
+            </thead>
+            <tbody">
+                <% for(var i=0;i<bilgiler.length;i++){%>
+                    <tr style="color: white;">
+                        <th>
+                            <%=bilgiler[i].kullanicisi%>
+                        </th> 
+                        <th>
+                                <%=bilgiler[i].pdf%>
+                            </th>
+                        <th>
+                            <%=bilgiler[i].yazan%>
+                        </th>
+                        <th>
+                            <%=bilgiler[i].konusu%>
+                        </th>
+                        <th>
+                            <%=bilgiler[i].adi%>
+                        </th>
+                        <th style="font-size: small;">
+                            <%=bilgiler[i].ozeti%>
+                        </th>
+                        <th>
+                            <%=bilgiler[i].donemi%>
+                        </th>
+                        <th>
+                            <%=bilgiler[i].anahtari%>
+                        </th>
+                        <th>
+                            <%=bilgiler[i].danismani%>
+                        </th>
+                        <th>
+                            <%=bilgiler[i].jurileri%>
+                        </th>
+                    </tr>
+                    <%}%>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Kullanıcı Giriş Paneli</title>
+</head>
+
+<body style="background-color:#343a40;">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <h2 style="text-align: left; margin-top: 220px; margin-left: 220px; color: white; font-family: 'Times New Roman', Times, serif;">YAZILIM LABORATUVARI I</h2> <br>
+    <h3 style="text-align: left; margin-left: 220px; color: white; font-family: 'Times New Roman', Times, serif;">PROJE III</h3>
+    <div class="container" style="padding: 50px;">
+        <div class="card card-login text-center bg-dark" style="position: absolute; top: 100px; right: 200px; padding: 50px;">
+            <h3 style="color: #fff;">Kullanıcı Giriş Paneli</h3>
+            <div class="card-header mx-auto bg-dark">
+                <span> <img src="../kocaeli_universitesi_logo.png" class="w-75" alt="Logo"> </span><br />
+
+            </div>
+            <div class="card-body">
+                <form action="" method="post">
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-angle-right"></i></span>
+                        </div>
+                        <input type="text" name="Kul_adi" class="form-control" placeholder="Kullanıcı Adı:">
+                    </div>
+
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-angle-right"></i></span>
+                        </div>
+                        <input type="password" name="sifre" class="form-control" placeholder="Kullanıcı Şifresi:">
+                    </div>
+                    <div class="form-group">
+                        <a class="btn btn-outline-success float-right login_btn" style="background-color: ghostwhite;" href="/Admingiris">Yönetici Giriş</a>  
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" name="btn" value="Giriş"
+                            class="btn btn-outline-success float-left login_btn" style="background-color: ghostwhite;">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Kullanıcı Sorgu Paneli</title>
+</head>
+
+<body style="background-color:#343a40;">
+    <H1 style="font-family: 'Times New Roman', Times, serif; color: #fff; text-align: center;">KULLANICI SORGU PANELİ</H1>
+    <form action="/hocasorgular" method="post">
+        <div class="container" style="position: relative; top: 100px; right: 200px; padding: 50px;">
+            <div class="main">
+                <div class="main-center">
+                    
+                    <form class="" method="post" action="#">
+
+                        <div class="form-group">
+                            <label for="name" style="color: white;">YAZAR</label>
+                            <div class="input-group">
+                                
+                                <input type="text" class="form-control" name="Tez_Sahibi" id="Tez_Sahibi" style="margin-right: 850px
+                                ;"
+                                    />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" style="color: white;">TÜR</label>
+                            <div class="input-group">
+                                
+                                <input type="text" class="form-control" name="Ders_adi"  style="margin-right: 850px
+                                ;"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="username" style="color: white;">ÖZET</label>
+                            <div class="input-group">
+                                
+                                <input type="text" class="form-control" name="Proje_ozeti" style="margin-right: 850px
+                                ;"
+                                    />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password" style="color: white;">DÖNEM</label>
+                            <div class="input-group">
+                                
+                                <input type="text" class="form-control" name="Proje_donemi" style="margin-right: 850px
+                                ;"
+                                    />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirm" style="color: white;">BAŞLIK</label>
+                            <div class="input-group">
+                                
+                                <input type="text" class="form-control" name="Proje_konusu" style="margin-right: 850px
+                                ;"
+                                    />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm" style="color: white;">ANAHTAR KELİMELER</label>
+                            <div class="input-group">
+                                
+                                <input type="text" class="form-control" name="Proje_anahtar" style="margin-right: 850px
+                                ;"
+                                    />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm" style="color: white;">DANIŞMAN</label>
+                            <div class="input-group">
+                               
+                                <input type="text" class="form-control" name="Proje_danisman" style="margin-right: 850px
+                                ;"
+                                    />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm" style="color: white;">JÜRİ ÜYELERİ</label>
+                            <div class="input-group">
+                                
+                                <input type="text" class="form-control" name="Proje_juri" style="margin-right: 850px
+                                ;"
+                                     />
+                            </div>
+                        </div>
+
+                        <input type="submit" name="btn" value="Sorgular"
+                            class="btn btn-outline-success login_btn" style="background-color: #fff; margin-left: 60px; margin-top: 10px; padding: 10px;">
+
+                    </form>
+                </div>
+                <!--main-center"-->
+            </div>
+            <!--main-->
+        </div>
+        <!--container-->
+    </form>
+    <div class="container" style="position: absolute; top: 100px; left: 300px; padding: 50px;">
+        <table class="table table-hower" style="border: #fff; border-style: solid; border-collapse: separate;">
+            <thead>
+                <tr>
+                    <th style="color: white;">PDF</th>
+                    <th style="color: white;">YAZAR</th>
+                    <th style="color: white;">KONU</th>
+                    <th style="color: white;">TÜR</th>
+                    <th style="color: white;">ÖZET</th>
+                    <th style="color: white;">DÖNEM</th>
+                    <th style="color: white;">ANAHTAR KELİMELER</th>
+                    <th style="color: white;">DANIŞMAN</th>
+                    <th style="color: white;">JÜRİ ÜYELERİ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(var i=0;i<bilgiler.length;i++){%>
+                    <tr style="color: white;">
+                        <th>
+                                <%=bilgiler[i].pdf%>
+                            </th>
+                        <th>
+                            <%=bilgiler[i].yazan%>
+                        </th>
+                        <th>
+                            <%=bilgiler[i].konusu%>
+                        </th>
+                        <th>
+                            <%=bilgiler[i].adi%>
+                        </th>
+                        <th style="font-size: small;">
+                            <%=bilgiler[i].ozeti%>
+                        </th>
+                        <th>
+                            <%=bilgiler[i].donemi%>
+                        </th>
+                        <th>
+                            <%=bilgiler[i].anahtari%>
+                        </th>
+                        <th>
+                            <%=bilgiler[i].danismani%>
+                        </th>
+                        <th>
+                            <%=bilgiler[i].jurileri%>
+                        </th>
+                    </tr>
+                    <%}%>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
+
+<! DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <title>PDF Paneli</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"> </script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+            integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    </head>
+    <style>
+        .file {
+            visibility: hidden;
+            position: absolute;
+        }
+
+        body {
+            color: #FFFFFF;
+            font-family: 'League Gothic', Impact, sans-serif;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 1.5em;
+            text-align: center;
+            height: 300px;
+            line-height: 100px;
+            margin: 100px;
+            width: 50%;
+            background-color:#343a40;
+        }
+
+        .container {
+            background-color:#343a40;
+            padding: 40px 80px;
+            border-radius: 8px;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 3rem;
+            font-weight: 900;
+            margin: 0 0 5rem 0;
+            background: #343a40;
+            text-align: center;
+        }
+
+        .btn.btn-primary {
+            background-color: #343a40;
+            border-color: #343a40;
+            outline: none;
+            color: #fff;
+        }
+
+    </style>
+
+    <body>
+        <h1 style="font-family: 'Times New Roman', Times, serif; color: #fff; margin-left: 550px;">PDF Paneli</h1>
+        <form action="/kullaniciicerisi" method="post" enctype="multipart/form-data">
+            <div class="container" style="position: absolute; margin-right: 600px; margin-top: 5px;">
+                <div class="form-group">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                           
+                        </div>
+                        <div style="font-size: inherit;" class="input-group-append">
+                            <input style="font-size: inherit; padding: 1px; margin-left: 10px; width: 120px;" class="browse input-group-text btn btn-secondary" type="file" name="file_pdf" id="file_pdf">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="position: relative; margin-left: 600px; margin-top: 50px; padding: 5px;" class="container">
+                <div class="form-group">
+                    <div class="input-group mb-3">
+                        <div class="input-group-append" style="width: 50px;">
+                            <button style="position:absolute; border: solid black; border-radius: 5px;" type="submit">İçe Aktar</button>
+                        </div>
+                        <div style="margin: 0px 100px;" class="input-group-append">
+                            <a href="/hocasorgular" style="border-radius: 5px; box-sizing: border-box; background-color: white; color: black; margin-left: 400px; margin-bottom: 100px; text-decoration-line: none;">Görüntüle</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <script>
+            $(document).on("click", ".browse", function () {
+                var file = $(this)
+                    .parent()
+                    .parent()
+                    .parent()
+                    .find(".file");
+                file.trigger("click");
+            });
+            $(document).on("change", ".file", function () {
+                $(this)
+                    .parent()
+                    .find(".form-control")
+                    .val(
+                        $(this)
+                            .val()
+                            .replace(/C:\\path\\/i, "")
+                    );
+            });  
+        </script>
+    </body>
+
+    </html>
+
+const mongoose =require('mongoose')
+const hocaSema = mongoose.Schema 
+
+const blogHocaSema =new hocaSema ({
+    hocaAdi:{
+        type: String,
+        require: true 
+    },
+    hocaSoyadi :{
+        type: String,
+        require : true 
+    }
+},{timestamps:true})
+const hocalardb = mongoose.model('hocalardb',blogHocaSema)
+module.exports= hocalardb
+
+const mongoose =require('mongoose')
+const pdfSema =mongoose.Schema 
+
+const blogPdfSema = new pdfSema ({
+    pdf :{
+        type: String,
+        require : true 
+    },
+    yazan:{
+        type: String,
+        require: true 
+    },
+    adi :{
+        type: String,
+        require : true 
+    },
+    ozeti :{
+        type: String,
+        require : true 
+    },
+    donemi :{
+        type: String,
+        require : true 
+    },
+    konusu :{
+        type: String,
+        require : true 
+    },
+    anahtari :{
+        type: String,
+        require : true 
+    },
+    danismani :{
+        type: String,
+        require : true 
+    },
+    jurileri :{
+        type: String,
+        require : true 
+    },
+    kullanicisi :{
+        type: String,
+        require : true 
+    }
+    
+
+})
+const filedb = mongoose.model('filedb',blogPdfSema)
+module.exports= filedb
+
+const express = require("express")
+const cevap = require("express/lib/response")
+
+const dosyaSistemi = require("fs")
+
+const pdfparse = require("pdf-parse")
+ 
+var tezCesit
+var hoca = " ", tezYazar = "", donem = "", ozet = "", konu = "", tezAnahtarK = "", danisman = "", juri = ""
+
+let yerelSunucu = express()
+
+const mongoose = require('mongoose')
+
+const veriTabani = "mongodb+srv://yazlabb:yazlabb@cluster.zhjlu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+
+mongoose.connect(veriTabani)
+    .then((sonuc) => {
+        yerelSunucu.listen(7000)
+    })
+    .catch((hata) => {
+        console.log(hata)
+    })
+const hocalardb=require("./dbhocalar")
+const pdfDatabase=require("./pdfDatabase")
+const { log } = require("console")
+yerelSunucu.set('view engine', 'ejs')
+const upload = require('express-fileupload')
+yerelSunucu.use(upload())
+yerelSunucu.use(express.urlencoded({ extended: true }))
+yerelSunucu.use(express.static('images'))
+yerelSunucu.use(express.static('PdfDokümanları'))
+
+yerelSunucu.get("/", (istek, cevap) => {
+    cevap.render("firstlogin")
+})
+yerelSunucu.get("/firstlogin", (istek, cevap) => {
+    cevap.render("firstlogin")
+})
+yerelSunucu.get("/admingiris", (istek, cevap) => {
+    cevap.render("admingiris")
+})
+yerelSunucu.post("/admingiris", (istek, cevap) => {
+    if (istek.body.kullanici === "yönetici" && istek.body.sifre === "yönetici") {
+        cevap.redirect("adminicerisi")
+    }
+    else {
+        console.log("Yönetici adı ve şifresi hatalı girildi")
+    }
+})
+yerelSunucu.get("/adminicerisi", (istek, cevap) => {
+    cevap.render("adminicerisi")
+})
+yerelSunucu.post("/adminicerisi", (istek, cevap) => {
+    if ((typeof istek.body.addkullanc) != 'undefined' || (typeof istek.body.addsifre) != 'undefined') {
+
+        const dbhocalar = new hocalardb({
+            hocaAdi: istek.body.addkullanc,
+            hocaSoyadi: istek.body.addsifre
+        })
+        dbhocalar.save()
+            .then((sonuc) => {
+                cevap.render('adminicerisi')
+            })
+            .catch((hata) => {
+                console.log(hata)
+            })
+
+    }
+    if ((typeof istek.body.guncadi1) != 'undefined') {
+        hocalardb.deleteOne({ kullanici_adi: istek.body.guncadi1 }, (hata) => {
+            if (hata) throw hata
+        })
+        const dbhocalar = new hocalardb({
+            hocaAdi: istek.body.guncadi2,
+            hocaSoyadi: istek.body.guncsifre
+        })
+        dbhocalar.save()
+            .then((sonuc) => {
+                cevap.render('adminicerisi')
+            })
+            .catch((hata) => {
+                console.log(hata)
+            })
+    }
+    if ((typeof istek.body.kullanicisil) != 'undefined') {
+        hocalardb.deleteOne({ hocaAdi: istek.body.kullanicisil }, (hata) => {
+            if (hata) throw hata
+            cevap.render('adminicerisi')
+        })
+    }
+    
+})
+yerelSunucu.post("/firstlogin",(istek,cevap)=>{
+    hocalardb.find().then((sonuc)=>{
+        for(var i=0;i<sonuc.length;i++){
+            if(istek.body.Kul_adi===sonuc[i].hocaAdi && istek.body.sifre===sonuc[i].hocaSoyadi){
+                hoca=istek.body.Kul_adi
+                cevap.redirect("kullaniciicerisi")
+            }
+            else{
+                console.log("Kullanıcı adı veya şifresi hatalı girildi")
+            }
+        }
+    })
+})
+yerelSunucu.post("/",(istek,cevap)=>{
+    hocalardb.find().then((cikti)=>{
+        for(var i=0;i<cikti.length;i++){
+            if(istek.body.Kul_adi===cikti[i].hocaAdi && istek.body.sifre===cikti[i].hocaSoyadi){
+                hoca=istek.body.Kul_adi
+                cevap.redirect("kullaniciicerisi")
+            }
+            else{
+                console.log("Kullanıcı adı veya şifresi hatalı girildi")
+            }
+        }
+    })
+})
+yerelSunucu.get("/kullaniciicerisi",(istek,cevap)=>{
+    cevap.render("kullaniciicerisi")
+})
+yerelSunucu.post("/kullaniciicerisi",(istek,cevap)=>{
+    
+    if (istek.files) {
+        console.log("Pdf sisteme yüklendi.")
+        var pdfDokumani = istek.files.file_pdf
+        var pdfDokumaniAdi = pdfDokumani.name
+        pdfDokumani.mv("./PdfDokümanları/" + pdfDokumaniAdi, function (hata) {
+            if (hata) {
+                console.log(hata)
+            }
+            else {
+
+                var pdfDosya = dosyaSistemi.readFileSync("./PdfDokümanları/" + pdfDokumaniAdi)
+                pdfparse(pdfDosya).then(function (bilgi) {
+                    var pdfDizi = []
+                    var pdfBilgi = bilgi.text
+                    const pdfBöl = bilgi.text.split(' ')
+
+                    tezCesit = pdfBöl[11] + " " + pdfBöl[12]
+                    for (var i = 0; i < pdfBöl.length; i++) {
+                        if (pdfBöl[i] === "No:") {
+                            tezYazar = tezYazar + pdfBöl[i + 1] + " " + pdfBöl[i + 4] + " " + pdfBöl[i + 5] + " "
+                            if (pdfBöl[i + 1].charAt(5) == '1') {
+                                tezYazar = tezYazar + " 1.Öğretim"
+                            }
+                            else if (pdfBöl[i + 1].charAt(5) == '2') {
+                                tezYazar = tezYazar + "2.Öğretim    "
+                            }
+                        }
+
+                    }
+                    for (var i = 0; i < pdfBöl.length; i++) {
+                        if (pdfBöl[i] == "Tarih:") {
+                            if (pdfBöl[i + 1].charAt(3) == '0') {
+                                if (parseInt(pdfBöl[i + 1].charAt(4)) > 6) {
+                                    donem = "Güz"
+                                }
+                                else {
+                                    donem = "Bahar"
+                                }
+                            }
+                            else {
+                                donem = "Güz"
+                            }
+                        }
+
+                    }
+
+                    for (var i = 0; i < pdfBöl.length; i++) {
+                        if (pdfBöl[i].charAt(1) == 'Ö' && pdfBöl[i].charAt(2) == 'Z' && pdfBöl[i].charAt(3) == 'E' && pdfBöl[i].charAt(4) == 'T' && pdfBöl[i + 1].length <= 15) {
+                            for (var j = i + 1; j < pdfBöl.length; j++) {
+                                if (pdfBöl[j].charAt(1) == 'A' && pdfBöl[j].charAt(2) == 'n' && pdfBöl[j].charAt(3) == 'a' && pdfBöl[j].charAt(4) == 'h' && pdfBöl[j].charAt(5) == 't') {
+                                    break
+                                }
+                                ozet = ozet + pdfBöl[j] + " "
+                            }
+                        }
+                    }
+                    for (var i = 16; i < 250; i++) {
+                        konu = konu + pdfBöl[i] + " "
+                        if (pdfBöl[i].length < 2) {
+                            break
+                        }
+                    }
+                    for (var i = 0; i < pdfBöl.length; i++) {
+                        if (pdfBöl[i] == "kelimeler:") {
+                            for (var j = i + 1; j < i + 50; j++) {
+                                if (pdfBöl[j].length <= 2 && pdfBöl[j + 1].length <= 2) {
+                                    break
+                                }
+                                tezAnahtarK = tezAnahtarK + pdfBöl[j] + " "
+                            }
+                        }
+                    }
+                    var sayac = 0;
+                    for (var i = 0; i < 500; i++) {
+                        if (pdfBöl[i].charAt(2) == '.' && pdfBöl[i].charAt(20) == '.' && pdfBöl[i].length > 45) {
+                            for (var j = i; j > 0; j--) {
+                                if (pdfBöl[j].length <= 2) {
+                                    sayac = j + 1
+                                    break
+                                }
+                            }
+                            for (var t = sayac; t < pdfBöl.length; t++) {
+                                if (pdfBöl[t + 1] == "Kocaeli") {
+                                    break;
+                                }
+                                danisman = danisman + pdfBöl[t] + " "
+                            }
+                            break
+                        }
+                    }
+                    var sayacbreak=0
+                    for (var i = 0; i < 70; i++) {
+                        if (pdfBöl[i].charAt(25) == '.' && pdfBöl[i].length > 45) {
+                            for (var j = i; j > 0; j--) {
+                                if (pdfBöl[j].length <= 2) {
+                                    sayac = j + 1
+                                    break
+                                }
+                            }
+                            for (var t = sayac; t < pdfBöl.length; t++) {
+                                if (pdfBöl[t + 1] == "Kocaeli") {
+                                    var sayac3=0;
+                                    for(var l=t;l<pdfBöl.length;l++){
+                                        if(pdfBöl[l].length>45){
+                                            sayac3=l
+                                            break
+                                        }
+                                    }
+                                    t=sayac3+1
+                                    if(pdfBöl[t].length==0 || pdfBöl[t].length==1 || pdfBöl[t].length>45){
+                                        break
+                                        sayacbreak=1
+                                    }
+                                    else{
+                                        if(pdfBöl[t].charAt(1)=='T' || pdfBöl[t].charAt(0)=='T'){
+                                            break
+                                            sayacbreak=1
+                                        }
+                                    }
+                                   
+                                }
+                                juri = juri + pdfBöl[t] + " "
+
+                            }
+                            break
+                        }
+                        
+                    }
+                    const dbfile = new pdfDatabase({
+                        pdf: pdfDokumaniAdi, yazan: tezYazar, adi: tezCesit, ozeti: ozet, donemi: donem, konusu: konu, anahtari: tezAnahtarK, danismani: danisman, jurileri: juri, kullanicisi: hoca
+                    })
+                    dbfile.save().then((sonuc) => {
+                        cevap.render('kullaniciicerisi')
+                    })
+                        .catch((hata) => {
+                            cevap.render(hata)
+                        })
+
+
+
+
+                })
+            }
+        })
+    }
+})
+yerelSunucu.get("/hocasorgular",(istek,cevap)=>{
+    cevap.render(__dirname + "/views/hocasorgular", {
+        bilgiler: {
+            pdf: "", yazan: " ", adi: "", ozeti: "", donemi: "", konusu: "", anahtari: "", danismani: "", jurileri: "", kullanicisi: ""
+        }
+    })
+})
+
+var kayitlar = []
+var kayit_A = [], kayit_B = [], kayit_C = [], kayit_D = []
+var kayit6 = [], kayit7 = [], kayit8 = []
+
+yerelSunucu.post("/hocasorgular",(istek,cevap)=>{
+    var i = 0, sayac2 = 0;
+    pdfDatabase.find({ kullanicisi: hoca })
+        .then((sonuc1) => {
+            if (istek.body.Tez_Sahibi.length != 0) {
+                for (i = 0; i < sonuc1.length; i++) {
+
+                    if (sonuc1[i].yazan.search(istek.body.Tez_Sahibi) != -1) {
+                        kayitlar.push(sonuc1[i])
+                    }
+                }
+            }
+            else {
+                kayitlar = sonuc1
+            }
+            if (istek.body.Proje_konusu.length != 0) {
+                for (i = 0; i < kayitlar.length; i++) {
+
+                    if (kayitlar[i].konusu.search(istek.body.Proje_konusu) != -1) {
+                        kayit_A.push(kayitlar[i])
+                    }
+                }
+            }
+            else {
+                kayit_A = kayitlar
+            }
+            if (istek.body.Ders_adi.length != 0) {
+                for (i = 0; i < kayit_A.length; i++) {
+
+                    if (kayit_A[i].adi.search(istek.body.Ders_adi) != -1) {
+                        kayit_B.push(kayit_A[i])
+                    }
+                }
+            }
+            else {
+                kayit_B = kayit_A
+            }
+            if (istek.body.Proje_ozeti.length != 0) {
+                for (i = 0; i < kayit_B.length; i++) {
+
+                    if (kayit_B[i].ozeti.search(istek.body.Proje_ozeti) != -1) {
+                        kayit_C.push(kayit_B[i])
+                    }
+                }
+            }
+            else {
+                kayit_C = kayit_B
+            }
+            if (istek.body.Proje_donemi.length != 0) {
+                for (i = 0; i < kayit_C.length; i++) {
+
+                    if (kayit_C[i].donemi.search(istek.body.Proje_donemi) != -1) {
+                        kayit_D.push(kayit_C[i])
+                    }
+                }
+            }
+            else {
+                kayit_D = kayit_C
+            }
+            if (istek.body.Proje_anahtar.length != 0) {
+                for (i = 0; i < kayit_D.length; i++) {
+
+                    if (kayit_D[i].anahtari.search(istek.body.Proje_anahtar) != -1) {
+                        kayit6.push(kayit_D[i])
+                    }
+                }
+            }
+            else {
+                kayit6 = kayit_D
+            }
+            if (istek.body.Proje_danisman.length != 0) {
+                for (i = 0; i < kayit6.length; i++) {
+
+                    if (kayit6[i].danismani.search(istek.body.Proje_danisman) != -1) {
+                        kayit7.push(kayit6[i])
+                    }
+                }
+            }
+            else {
+                kayit7 = kayit6
+            }
+            if (istek.body.Proje_juri.length != 0) {
+                for (i = 0; i < kayit7.length; i++) {
+
+                    if (kayit7[i].jurileri.search(istek.body.Proje_juri) != -1) {
+                        kayit8.push(kayit7[i])
+                    }
+                }
+            }
+            else {
+                kayit8 = kayit7
+            }
+            cevap.render("hocasorgular", { bilgiler : kayit8 })
+
+
+        })
+})
+yerelSunucu.get("/adminsorgular",(istek,cevap)=>{
+    cevap.render(__dirname + "/views/adminsorgular", {
+        bilgiler: {
+            pdf: "", yazan: " ", adi: "", ozeti: "", donemi: "", konusu: "", anahtari: "", danismani: "", jurileri: "", kullanicisi: ""
+        }
+    })
+})
+yerelSunucu.post("/adminsorgular",(istek,cevap)=>{
+    var i = 0, sayac2 = 0;
+    var kayitlar = []
+    var kayit_A = [], kayit_B = [], kayit_C = [], kayit_D = [], kayit6 = [], kayit7 = [], kayit8 = []
+    var kayitSon = []
+    pdfDatabase.find()
+        .then((sonuc2) => {
+            if (istek.body.Tez_Sahibi.length != 0) {
+                for (i = 0; i < sonuc2.length; i++) {
+
+                    if (sonuc2[i].yazan.search(istek.body.Tez_Sahibi) != -1) {
+                        kayitlar.push(sonuc2[i])
+                    }
+                }
+            }
+            else {
+                kayitlar = sonuc2
+            }
+            if (istek.body.Proje_konusu.length != 0) {
+                for (i = 0; i < kayitlar.length; i++) {
+
+                    if (kayitlar[i].konusu.search(istek.body.Proje_konusu) != -1) {
+                        kayit_A.push(kayitlar[i])
+                    }
+                }
+            }
+            else {
+                kayit_A = kayitlar
+            }
+            if (istek.body.Ders_adi.length != 0) {
+                for (i = 0; i < kayit_A.length; i++) {
+
+                    if (kayit_A[i].adi.search(istek.body.Ders_adi) != -1) {
+                        kayit_B.push(kayit_A[i])
+                    }
+                }
+            }
+            else {
+                kayit_B = kayit_A
+            }
+            if (istek.body.Proje_ozeti.length != 0) {
+                for (i = 0; i < kayit_B.length; i++) {
+
+                    if (kayit_B[i].ozeti.search(istek.body.Proje_ozeti) != -1) {
+                        kayit_C.push(kayit_B[i])
+                    }
+                }
+            }
+            else {
+                kayit_C = kayit_B
+            }
+            if (istek.body.Proje_donemi.length != 0) {
+                for (i = 0; i < kayit_C.length; i++) {
+
+                    if (kayit_C[i].donemi.search(istek.body.Proje_donemi) != -1) {
+                        kayit_D.push(kayit_C[i])
+                    }
+                }
+            }
+            else {
+                kayit_D = kayit_C
+            }
+            if (istek.body.Proje_anahtar.length != 0) {
+                for (i = 0; i < kayit_D.length; i++) {
+
+                    if (kayit_D[i].anahtari.search(istek.body.Proje_anahtar) != -1) {
+                        kayit6.push(kayit_D[i])
+                    }
+                }
+            }
+            else {
+                kayit6 = kayit_D
+            }
+            if (istek.body.Proje_danisman.length != 0) {
+                for (i = 0; i < kayit6.length; i++) {
+
+                    if (kayit6[i].danismani.search(istek.body.Proje_danisman) != -1) {
+                        kayit7.push(kayit6[i])
+                    }
+                }
+            }
+            else {
+                kayit7 = kayit6
+            }
+            if (istek.body.Proje_juri.length != 0) {
+                for (i = 0; i < kayit7.length; i++) {
+
+                    if (kayit7[i].jurileri.search(istek.body.Proje_juri) != -1) {
+                        kayit8.push(kayit7[i])
+                    }
+                }
+            }
+            else {
+                kayit8 = kayit7
+            }
+            if (istek.body.Yukleyen.length != 0) {
+                for (i = 0; i < kayit8.length; i++) {
+
+                    if (kayit8[i].kullanicisi.search(istek.body.Yukleyen) != -1) {
+                        kayitSon.push(kayit8[i])
+                    }
+                }
+            }
+            else {
+                kayitSon = kayit8
+            }
+            cevap.render("adminsorgular", { bilgiler : kayitSon })
+
+
+        })
+})
